@@ -1,11 +1,12 @@
 import { Button } from "@nextui-org/button";
-import Main from "./components/ui/Main";
+import Main from "@/components/ui/Main";
 import { Link } from "@nextui-org/link";
+import Incognitalk from "@/components/ui/Incognitalk";
 export default function Home() {
   return (
     <Main>
       <article className="m-auto">
-        <h1 className=" font-black text-4xl text-primary">incognitalk.</h1>
+        <Incognitalk />
         <p>
           send your message to someone,{" "}
           <span className=" text-secondary font-black">anonymously</span>, here.

@@ -1,10 +1,11 @@
-import CreateForm from "../components/ui/CreateForm";
-import Main from "../components/ui/Main";
+import PortalForm from "@/components/ui/PortalForm";
+import Main from "@/components/ui/Main";
+import Incognitalk from "@/components/ui/Incognitalk";
 
 export default function Create() {
   return (
     <Main>
-      <CreateForm />
+      <PortalForm />
     </Main>
   );
 }

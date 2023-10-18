@@ -2,9 +2,10 @@
 "use client";
 
 import { NextUIProvider } from "@nextui-org/react";
-import { useThemeState } from "@/app/lib/store";
+import { useThemeState, useUserState } from "@/lib/store";
 import { Gabarito } from "next/font/google";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 const gabarito = Gabarito({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
@@ -14,6 +15,14 @@ const gabarito = Gabarito({
 export function Providers({ children }: { children: React.ReactNode }) {
   const [hydrate, setHydrate] = useState(false);
   const theme = useThemeState();
+  const user = useUserState();
+  const route = useRouter();
+
+  useEffect(() => {
+    if (user.isSignedIn) return route.push("/talks");
+    else return route.push("/portal");
+  }, [hydrate]);
+
   useEffect(() => {
     setHydrate(true);
   }, []);
