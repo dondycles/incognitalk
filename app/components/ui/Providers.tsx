@@ -5,7 +5,11 @@ import { NextUIProvider } from "@nextui-org/react";
 import { useThemeState } from "@/app/lib/store";
 import { Gabarito } from "next/font/google";
 import { useEffect, useState } from "react";
-const gabarito = Gabarito({ subsets: ["latin"], variable: "--font-gabarito" });
+const gabarito = Gabarito({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-gabarito",
+});
 
 export function Providers({ children }: { children: React.ReactNode }) {
   const [hydrate, setHydrate] = useState(false);
